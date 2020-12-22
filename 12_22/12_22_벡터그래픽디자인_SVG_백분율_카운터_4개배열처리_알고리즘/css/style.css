@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+#wrap {width:100%;background:#fff;}
+#wrap .circle-wrap {width:100%;max-width:500px;height:auto;margin:100px auto;}
+#wrap .circle-wrap .gap {margin:10%;}
+#wrap .circle-wrap .gap .title {padding-bottom:70px;text-align:center;}
+#wrap .circle-wrap .gap .title h2 {letter-spacing:1.5px;display:inline-block;font-size:40px;padding-bottom:5px;border-bottom:1px solid #aaa;}
+#wrap .circle-wrap .gap .title h2 i {color:#c77;font-size:50px;}
+#wrap .circle-wrap .content {width:100%;}
+#wrap .circle-wrap .content ul {width:100%;}
+#wrap .circle-wrap .content ul li {float:left;width:25%;}//* 곧 배울 display:flex도 옆으로 늘어놓을 수 있음 */
+#wrap .circle-wrap .content ul li .gap {margin:20px;position:relative;}/*포지션 줄거라서 어차피 패딩 줘봤자 넓이만늘어남*/
+#wrap .circle-wrap .content ul li .gap svg {position:absolute;top:0;left:0;width:100%;height:auto;transform:rotate(-90deg);}
+#wrap .circle-wrap .content ul li .gap .front {position:relative;z-index:2;}
+#wrap .circle-wrap .content ul li .gap .bg    {z-index:1;opacity:0.05;}
+#wrap .circle-wrap .content ul li .gap .num   {z-index:3;position:absolute;top:50%;margin-top:-50px;left:0;width:100%;text-align:center;}
+#wrap .circle-wrap .content ul li .gap .num h2 {font-size:100px;color:#000;}
