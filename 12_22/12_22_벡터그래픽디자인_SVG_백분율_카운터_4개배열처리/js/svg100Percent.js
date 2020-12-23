@@ -2,7 +2,7 @@
    
 var circle = $(".circle"); //each()메소드 객체 배열처리
 var totLen = []; //배열의 틀로 비어놓으면 밑에서 idx의 값을 받아와서 입력시킴
-var s = [6,4,5,7]; //배열을 사용하는 경우는 [5,6,8,4];써ㅏ도ㅓㅁ //각각 그래프가 채워지는데 걸리는 시간을 배열을 사용하여 각기 따로조정
+var s = [6,4,5,7]; //배열을 사용하는 경우는 [5,6,8,4];써도됨 //각각 그래프가 채워지는데 걸리는 시간을 배열을 사용하여 각기 따로조정
 var slice = [];//1초당 채워지는 조각의 길이를 말함
 var tot = [0,0,0,0]; //누적합계, 누적변수는 무조건 초기값 0, 말그대로 누적된것이기때문에 비워두면 안됨(NaN뜸)
 var setId = [];
@@ -31,14 +31,19 @@ function sbgAnimFn(){
             tot[idx] += slice[idx];
             console.log( totLen[idx] );
 
-            if( tot[idx] > totLen[idx]*per[idx] ){
-                clearInterval(setId[idx]);
-            }
+            if( tot[idx] > totLen[idx]*per[idx] )
+                clearInterval(setId[idx]); //안에 하나밖에 없으면 {}안써도됨
+            
 
             $(obj).css({ strokeDashoffset : totLen[idx]-tot[idx] });//totLen[idx]-tot[idx] 선채우기 ,tot[idx] 선지우기
             x[idx] = Math.round( (tot[idx]/totLen[idx])*100 ) + "%";
-            $(".num").eq(idx).find("h2").text( x[idx] ).css({ color : color[idx] });
-            circle.eq(idx).css({ stroke : color[idx] });
+
+            $(".num")
+            .eq(idx).find("h2").text( x[idx] )
+            .css({ color : color[idx] }); //중간에 세미콜론 안 쓰고 깔끔하게 정리할 수 있음
+
+            circle
+            .eq(idx).css({ stroke : color[idx] });
 
         },1000/100)
     })
