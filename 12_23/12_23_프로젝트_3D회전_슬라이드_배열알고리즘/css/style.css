@@ -16,7 +16,7 @@
 #slideSection .slide-container .slide-view .slide-wrap .slide1 {z-index:3;left:0;position:relative;transform:rotate(0deg) scale(1.2) perspective(3000px);}
 
 #slideSection .slide-container .slide-view .slide-wrap .slide2 {z-index:2;left:500px;transform:rotate(0deg) scale(.6) perspective(1500px);}
-#slideSection .slide-container .slide-view .slide-wrap .slide3 {z-index:1;left:750px;transform:rotate(0deg) scale(.3)  perspective(1500px);}
+#slideSection .slide-container .slide-view .slide-wrap .slide3 {z-index:1;left:750px;transform:rotate(0deg) scale(.3) perspective(1500px);}
 
 /* 버튼 */
 #slideSection .slide-container .nextBtn-wrap {z-index:2;position:absolute;top:50%;margin-top:-50px;right:50%;margin-right:-400px;width:50px;height:50px;}
