@@ -8,7 +8,6 @@
     //slide3d.push(imsi);
     //console.log(slide3d);
 
-    
 
     $(".slide-container").swipe({
         swipeLeft : function(){
@@ -61,4 +60,23 @@
         });
     }
 
+    function resizeFn(){
+        var slide = $(".slide-container").find(".slide-view")
+        var winW = $(window).innerWidth();
+        var swipeWrap = $(".swipe-wrap");
+        var fontH2H = swipeWrap.innerHeight();
+        var fontH2 = swipeWrap.find("h2");
+        var fontH2W = swipeWrap.innerWidth();
+        var h2Rate = 0.04
+        
+        slide.css({width : winW});
+        fontH2.css({ fontSize: fontH2W*h2Rate });
+        fontH2.css({ lineHeight: fontH2H + "px" });
+
+
+    }
+
+    $(window).resize(function(){
+        resizeFn();
+    })
 })(window,document,jQuery);
