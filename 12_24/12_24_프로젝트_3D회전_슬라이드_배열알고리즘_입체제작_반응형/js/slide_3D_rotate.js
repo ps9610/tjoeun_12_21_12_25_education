@@ -40,11 +40,11 @@
     });
 
     function slide3dMainFn(){ //css에서구현했던그대로갖다쓴거임
-        $(".slide").eq(a[0]).css({left:-780}).stop().fadeIn(500,function(){
+        $(".slide").eq(a[0]).css({left:-110 +"%"/* 780 */}).stop().fadeIn(500,function(){
             $(this).css({ zIndex:1, transform:"perspective(1500px) scale(.5) rotateY(0deg) translateZ(-200px)" ,opacity:.5});
             $(this).find("img").css({ outlineColor:"rgba(0,150,0)" });
         });
-        $(".slide").eq(a[1]).css({left:-580, opacity:1}).stop().fadeIn(500,function(){
+        $(".slide").eq(a[1]).css({left:-105.6666667 +"%"/* -580 */, opacity:1}).stop().fadeIn(500,function(){
             $(this).css({ zIndex:2, transform:"perspective(1500px) scale(.8) rotateY(-70deg) translateZ(-50px)" }); 
             $(this).find("img").css({ outlineColor:"rgba(0,150,0)" });
         });
@@ -52,12 +52,12 @@
             $(this).css({ zIndex:3, transform:"perspective(1000px)scale(1.2) rotateY(0deg) translateZ(0px)" });
             $(this).find("img").css({ outlineColor:"rgba(150,0,0)" });
         });
-        $(".slide").eq(a[3]).css({left:580, opacity:1}).stop().fadeIn(500,function(){
+        $(".slide").eq(a[3]).css({left:105.6666667 +"%"/* 580 */, opacity:1}).stop().fadeIn(500,function(){
             $(this).css({ zIndex:2, transform:"perspective(1500px) scale(.8) rotateY(70deg) translateZ(-50px)" }); 
             $(this).find("img").css({ outlineColor:"rgba(0,150,0)" });
             
         });
-        $(".slide").eq(a[4]).css({left:780}).stop().fadeIn(500,function(){
+        $(".slide").eq(a[4]).css({left:110 +"%"/* 780 */}).stop().fadeIn(500,function(){
             $(this).css({ zIndex:1, transform:"perspective(1500px) scale(.5) rotateY(0deg) translateZ(-200px)" ,opacity:.5}); 
             $(this).find("img").css({ outlineColor:"rgba(0,150,0)" });
         })
