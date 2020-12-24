@@ -40,6 +40,42 @@
         }
     });
 
+    $(".slide-container").swipe({
+        swipeLeft : function(){
+
+            imsi = a.shift();
+            a.push(imsi);
+            console.log(a);
+            slide3dMainFn();
+            
+        },
+        swipeRight : function(){
+
+            imsi = a.pop(imsi);
+            a.unshift(imsi); 
+            console.log(a);
+            slide3dMainFn();
+        }
+    })
+
+    $(".slide-container").swipe({
+        swipeleft : function(){
+
+            imsi = a.shift();
+            a.push(imsi);
+            console.log(a);
+            slide3dMainFn();
+            
+        },
+        swiperight : function(){
+
+            imsi = a.pop(imsi);
+            a.unshift(imsi); 
+            console.log(a);
+            slide3dMainFn();
+        }
+    })
+
     //prevSlide
     $(".prevBtn").on({//버튼누를때마다imsi실행됨/한번누르면한번뒤로/두번누르면두번뒤로/이런식으로
         click : function(){
