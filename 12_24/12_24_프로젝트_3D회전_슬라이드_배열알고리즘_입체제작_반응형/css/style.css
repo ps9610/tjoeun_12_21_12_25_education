@@ -9,7 +9,7 @@
 #wrap #slideSection .slide-container .slide-view .slide-wrap .slide > div {width:100%;}
 #wrap #slideSection .slide-container .slide-view .slide-wrap .slide > div > img {width:100%;outline:5px solid rgb(10,50,0);outline-offset:20px;}
 /* 3d 슬라이드 배치방법/타로카드처럼배치할거임  */
-#wrap #slideSection .slide-container .slide-view .slide-wrap .slide5 {z-index:1;left:-110%;/*780px*/transform:perspective(1500px) scale(.5) rotateY(0deg) translateZ(-200px);opacity:.5;}
+#wrap #slideSection .slide-container .slide-view .slide-wrap .slide5 {z-index:1;left:-140%;/*780px*/transform:perspective(1500px) scale(.5) rotateY(0deg) translateZ(-200px);opacity:.5;}
 #wrap #slideSection .slide-container .slide-view .slide-wrap .slide4 {z-index:2;left:-105.6666667%;/*580px*/transform:perspective(1500px) scale(.8) rotateY(-70deg) translateZ(-50px);}
 /* 메인1번이미지가제일앞에보임/높이잡아지기위해 position:relative */
 /* 3d는 transform이 들어감 rotate(0deg) scale() perspective:깊이감(점점깊게들어가는것같은) */
@@ -19,7 +19,7 @@
 #wrap #slideSection .slide-container .slide-view .slide-wrap .slide1:hover {transform:perspective(200px) scale(1.2) rotateY(0deg) translateZ(120px);}
 
 #wrap #slideSection .slide-container .slide-view .slide-wrap .slide2 {z-index:2;left:105.6666667%/*580px*/;transform:perspective(1500px) scale(.8) rotateY(70deg) translateZ(-50px);}
-#wrap #slideSection .slide-container .slide-view .slide-wrap .slide3 {z-index:1;left:110%/*780px*/;transform:perspective(1500px) scale(.5) rotateY(0deg) translateZ(-200px);opacity:.5;}
+#wrap #slideSection .slide-container .slide-view .slide-wrap .slide3 {z-index:1;left:140%/*780px*/;transform:perspective(1500px) scale(.5) rotateY(0deg) translateZ(-200px);opacity:.5;}
 
 /* 버튼 */
 #wrap #slideSection .slide-container .nextBtn-wrap {z-index:2;position:absolute;top:50%;margin-top:-50px;right:50%;margin-right:-12.61166579%;width:50px;height:50px;}
@@ -27,7 +27,7 @@
 #wrap #slideSection .slide-container .nextBtn-wrap a i {display:table-cell;vertical-align:middle;width:15%;height:50%;border-top:5px solid rgba(225,225,225,.5);border-right:5px solid rgba(225,225,225,.5);transform:rotate(45deg);transition:all 0.5s;}
 #wrap #slideSection .slide-container .nextBtn-wrap a:hover i {border-color:#fff;background:transparent;}
 
-#wrap #slideSection .slide-container .prevBtn-wrap {z-index:2;position:absolute;top:50%;margin-top:-50px;left:50%;margin-right:-12.61166579%;width:50px;height:50px;}
+#wrap #slideSection .slide-container .prevBtn-wrap {z-index:2;position:absolute;top:50%;margin-top:-50px;left:50%;margin-left:-12.61166579%;width:50px;height:50px;}
 #wrap #slideSection .slide-container .prevBtn-wrap a {display:table;width:100%;height:100%;}
 #wrap #slideSection .slide-container .prevBtn-wrap a i {display:table-cell;vertical-align:middle;width:15%;height:50%;border-top:5px solid rgba(225,225,225,.5);border-left:5px solid rgba(225,225,225,.5);transform:rotate(-45deg);transition:all 0.5s;}
 #wrap #slideSection .slide-container .prevBtn-wrap a:hover i {border-color:#fff;background:transparent;}

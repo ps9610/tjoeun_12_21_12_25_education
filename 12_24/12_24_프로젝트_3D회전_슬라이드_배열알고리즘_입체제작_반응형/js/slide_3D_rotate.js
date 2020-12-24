@@ -1,5 +1,18 @@
 ;(function(window,document,$,undefined){
 
+    var slidW = $(".slide").eq(2).innerWidth();
+
+    setTimeout(resizeFn, 100); //반응형 setTimeout 반드시 써줘야함!!!!
+
+    function resizeFn(){
+        slidW = $(".slide").eq(2).innerWidth();
+        slide3dMainFn(); //slidW라는 변수를 slide3dMainFn함수에 즉각 전달시키기 위해 써줌
+    }
+
+    $(window).resize(function(){
+        resizeFn();
+    })
+
     //배열 처리
     //배열 메서드/맨앞에꺼를한칸씩옆으로이동시키는작업
         //ㄴ>shift()<->unshift(), push(), pop()
@@ -40,25 +53,25 @@
     });
 
     function slide3dMainFn(){ //css에서구현했던그대로갖다쓴거임
-        $(".slide").eq(a[0]).css({left:-110 +"%"/* 780 */}).stop().fadeIn(500,function(){
-            $(this).css({ zIndex:1, transform:"perspective(1500px) scale(.5) rotateY(0deg) translateZ(-200px)" ,opacity:.5});
+        $(".slide").eq(a[0]).css({left:-140 +"%"/* 780 */}).stop().fadeIn(500,function(){
+            $(this).css({ zIndex:1, transform:"perspective("+(slidW*2.5)/*1500*/+"px) scale(.5) rotateY(0deg) translateZ(-"+(slidW*0.333333333)/* 200 */+"px)" ,opacity:.5});
             $(this).find("img").css({ outlineColor:"rgba(0,150,0)" });
         });
         $(".slide").eq(a[1]).css({left:-105.6666667 +"%"/* -580 */, opacity:1}).stop().fadeIn(500,function(){
-            $(this).css({ zIndex:2, transform:"perspective(1500px) scale(.8) rotateY(-70deg) translateZ(-50px)" }); 
+            $(this).css({ zIndex:2, transform:"perspective("+(slidW*2.5)/* 1500 */+"px) scale(.8) rotateY(-70deg) translateZ(-"+(slidW*0.083333333)/* 50 */+"px)" }); 
             $(this).find("img").css({ outlineColor:"rgba(0,150,0)" });
         });
         $(".slide").eq(a[2]).css({left:0, opacity:1}).stop().fadeIn(500,function(){
-            $(this).css({ zIndex:3, transform:"perspective(1000px)scale(1.2) rotateY(0deg) translateZ(0px)" });
+            $(this).css({ zIndex:3, transform:"perspective("+(slidW*1.666666667)/* 1000 */+"px)scale(1.2) rotateY(0deg) translateZ(0px)" });
             $(this).find("img").css({ outlineColor:"rgba(150,0,0)" });
         });
         $(".slide").eq(a[3]).css({left:105.6666667 +"%"/* 580 */, opacity:1}).stop().fadeIn(500,function(){
-            $(this).css({ zIndex:2, transform:"perspective(1500px) scale(.8) rotateY(70deg) translateZ(-50px)" }); 
+            $(this).css({ zIndex:2, transform:"perspective("+(slidW*2.5)/* 1500 */+"px) scale(.8) rotateY(70deg) translateZ(-"+(slidW*0.083333333)/* 50 */+"px)" }); 
             $(this).find("img").css({ outlineColor:"rgba(0,150,0)" });
             
         });
-        $(".slide").eq(a[4]).css({left:110 +"%"/* 780 */}).stop().fadeIn(500,function(){
-            $(this).css({ zIndex:1, transform:"perspective(1500px) scale(.5) rotateY(0deg) translateZ(-200px)" ,opacity:.5}); 
+        $(".slide").eq(a[4]).css({left:140 +"%"/* 780 */}).stop().fadeIn(500,function(){
+            $(this).css({ zIndex:1, transform:"perspective("+(slidW*2.5)/* 1500 */+"px) scale(.5) rotateY(0deg) translateZ(-"+(slidW*0.333333333)/* 200 */+"px)" ,opacity:.5}); 
             $(this).find("img").css({ outlineColor:"rgba(0,150,0)" });
         })
         //1.CSS그대로갖다써/2.eq에배열넣어/배열값전달받게
