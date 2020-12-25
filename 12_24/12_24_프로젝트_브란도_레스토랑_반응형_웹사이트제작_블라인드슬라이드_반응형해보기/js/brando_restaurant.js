@@ -184,9 +184,9 @@
             var cnt = 0;
 
             var slide = $("#section01 .slide")
-            var slideW = $("#section01 .slide-container").innerWidth();
             var arrowDownBtn = $("#section01 .arrow-down-btn")
-            var section01 = $("#section01")
+            var section01 = $("#section01");
+            var winW = $(window).innerWidth();
             var hungry = $("#section01 .hungry")
             var window_ = $(window) // var window라고 쓰면 예약 식별자인 window가 됨으로 _붙여줌
             var htmlBody = $("html,body")
@@ -204,16 +204,23 @@
             function resizeFn(){                
                 winH = window_.height();
                 section01.css({ height:winH });
+                sectionW = section01.css({ width:winW });
                 
                 imgH = hungry.height();
                 imgTop = (winH-imgH)/2;
                hungry.css({ top:imgTop });
 
-               //조각낸 백그라운드 이미지 반응형
-            $(".slide li").eq(0).find("div").css({ backgroundPositionX : -(slideW/4)*0, backgroundPositionY : 0  });
-            $(".slide li").eq(1).find("div").css({ backgroundPositionX : -(slideW/4)*1, backgroundPositionY : 0  });
-            $(".slide li").eq(2).find("div").css({ backgroundPositionX : -(slideW/4)*2, backgroundPositionY : 0  });
-            $(".slide li").eq(3).find("div").css({ backgroundPositionX : -(slideW/4)*3, backgroundPositionY : 0  });
+            //조각낸 백그라운드 이미지 반응형
+
+            $(".bgPosition1").find("div").css({ backgroundPositionX : -(sectionW.innerWidth()/4)*0, backgroundPositionY : 0  });
+            $(".bgPosition2").find("div").css({ backgroundPositionX : -(sectionW.innerWidth()/4)*1, backgroundPositionY : 0  });
+            $(".bgPosition3").find("div").css({ backgroundPositionX : -(sectionW.innerWidth()/4)*2, backgroundPositionY : 0  });
+            $(".bgPosition4").find("div").css({ backgroundPositionX : -(sectionW.innerWidth()/4)*3, backgroundPositionY : 0  });
+            
+                //console.log((sectionW.innerWidth()/4)*0)
+                //console.log((sectionW.innerWidth()/4)*1)
+                //console.log((sectionW.innerWidth()/4)*2)
+                //console.log((sectionW.innerWidth()/4)*3)
 
             // .slide0 li:nth-child(1) div {background: calc(-475.75px*0) 0;}
             // .slide0 li:nth-child(2) div {background: calc(-475.75px*1) 0;}
