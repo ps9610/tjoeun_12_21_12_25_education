@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#wrap {width:100%;background:#fff;}
+#wrap .circle-wrap {width:100%;max-width:1600px;height:auto;margin:100px auto;}
+#wrap .circle-wrap .gap {margin:10%;}
+#wrap .circle-wrap .gap .title {padding-bottom:70px;text-align:center;}
+#wrap .circle-wrap .gap .title h2 {letter-spacing:1.5px;display:inline-block;font-size:40px;padding-bottom:5px;border-bottom:1px solid #aaa;}
+#wrap .circle-wrap .gap .title h2 i {color:#c77;font-size:50px;}
+#wrap .circle-wrap .content {width:100%;}
+#wrap .circle-wrap .content ul {width:100%;}
+#wrap .circle-wrap .content ul li {float:left;width:25%;} /* 곧 배울 display:flex도 옆으로 늘어놓을 수 있음 */
+#wrap .circle-wrap .content ul li ._gap {margin:6.25%;} /*포지션 줄거라서 어차피 패딩 줘봤자 넓이만늘어남*/
+#wrap .circle-wrap .content ul li ._gap .box {position:relative;} /* 부모 역할을 하는 요소로서의 박스묶음 */
+#wrap .circle-wrap .content ul li ._gap .box svg {position:absolute;top:0;left:0;width:100%;height:auto;transform:rotate(-90deg);}
+#wrap .circle-wrap .content ul li ._gap .box .bg    {z-index:1;position:relative;opacity:0.05;}
+#wrap .circle-wrap .content ul li ._gap .box .front {z-index:2;}
+#wrap .circle-wrap .content ul li ._gap .box .num   {z-index:3;position:absolute;top:0;left:0;width:100%;height:100%;text-align:center;display:table;}
+/* 여기서박스블럭높이잡힌이유/class bg가 relative라서/relative는 박스블럭성질로 높이가지고잇음 */
+/* display:table은 verticall-align을 쓰기위함 */
+/* 부모에서 탑 50%에 폰트크기 반만큼 마진탑으로 빼주면 글씨가 위아래 가운데로 감 */
+#wrap .circle-wrap .content ul li ._gap .box .num h2 {font-size:3.1529vw;/* 창 너비의 1/100크기(vw) */color:#000;display:table-cell;vertical-align:middle;}/* 오늘새롭게배운것 : vw/제이쿼리를사용하지않은반응형폰트크기 */
+
+/* 반응형은 항상 해당요소 바로 밑에 / 아니면 맨 밑으로 /어쨌든 항상 밑에 있어야 적용됨 */
+@media all and (max-width:980px){
+    #wrap .circle-wrap .content ul li {float:left;width:50%;}
+    /* 원이 넓이가 2배가 되었으니까 폰트도 두배시켜주면됨 */
+    #wrap .circle-wrap .content ul li ._gap .box .num h2 {font-size:calc(3.1529vw*2);}
+}
+@media all and (max-width:500px){
+    #wrap .circle-wrap .content ul li {float:left;width:100%;}
+    #wrap .circle-wrap .content ul li ._gap .box .num h2 {font-size:calc(3.1529vw*4);}
+}
