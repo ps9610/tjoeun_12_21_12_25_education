@@ -312,6 +312,7 @@
                     click:function(){
                         console.log("내가 클릭한=이동하고자하는 번호", idx); //클릭
                         console.log("현재 슬라이드 번호", cnt); //현재
+                        console.log("임시", imsi); //임시
                         
                         imsi = cnt; 
                         cnt = idx;
